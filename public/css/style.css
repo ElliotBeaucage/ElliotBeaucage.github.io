@@ -1,4 +1,4 @@
-/* Styles généraux pour les écrans plus grands */
+/* Styles de base */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -161,7 +161,7 @@ footer {
 }
 
 footer .contact-info,
-.footer .social-links {
+footer .social-links {
   margin-bottom: 20px;
 }
 
@@ -181,8 +181,10 @@ footer p {
   font-size: 1.1rem;
 }
 
+/* Styles pour les images */
 .skills {
   display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se déplacer sur plusieurs lignes */
   justify-content: center;
   gap: 30px;
 }
@@ -294,12 +296,17 @@ footer p {
   }
 
   .skills {
-    gap: 15px;
+    display: grid; /* Change le conteneur en grille */
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(100px, 1fr)
+    ); /* Crée une grille responsive */
+    gap: 20px; /* Espace entre les éléments */
   }
 
   .img {
-    width: 30px;
-    height: 30px;
+    width: 100%; /* Les images prennent toute la largeur de la colonne */
+    height: auto; /* Maintient les proportions de l'image */
   }
 
   footer p {
@@ -337,12 +344,16 @@ footer p {
   }
 
   .skills {
-    gap: 10px;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(80px, 1fr)
+    ); /* Ajuste la taille des colonnes */
+    gap: 15px; /* Réduit l'espace entre les éléments */
   }
 
   .img {
-    width: 25px;
-    height: 25px;
+    width: 100%; /* Les images prennent toute la largeur de la colonne */
+    height: auto; /* Maintient les proportions de l'image */
   }
 
   footer p {
