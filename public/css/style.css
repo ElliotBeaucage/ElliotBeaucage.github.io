@@ -1,3 +1,4 @@
+/* Styles généraux pour les écrans plus grands */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -179,11 +180,13 @@ footer p {
   margin: 0;
   font-size: 1.1rem;
 }
+
 .skills {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
+
 .img {
   width: 50px;
   height: 50px;
@@ -228,20 +231,121 @@ footer p {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Styles Responsives */
+@media (max-width: 1200px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
   header nav ul {
     flex-direction: column;
     gap: 20px;
   }
 
+  header nav ul li a {
+    font-size: 1rem;
+  }
+
   main div h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .weather,
   .spotifly,
   .pubG6 {
+    padding: 30px;
     margin: 20px 0;
+  }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header nav ul {
+    gap: 10px;
+  }
+
+  header nav ul li a {
+    font-size: 0.9rem;
+  }
+
+  main div h1 {
+    font-size: 1.5rem;
+  }
+
+  .weather,
+  .spotifly,
+  .pubG6 {
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .skills {
+    gap: 15px;
+  }
+
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 20px 0;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li a {
+    font-size: 0.8rem;
+  }
+
+  main div h1 {
+    font-size: 1.2rem;
+  }
+
+  .weather,
+  .spotifly,
+  .pubG6 {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .skills {
+    gap: 10px;
+  }
+
+  .img {
+    width: 25px;
+    height: 25px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
   }
 }
