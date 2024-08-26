@@ -198,6 +198,16 @@ footer p {
 .img:hover {
   transform: scale(1.5);
 }
+#skill {
+  background: #2a2a2a; /* Couleur de fond par défaut */
+  color: #e0e0e0; /* Couleur du texte */
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -272,6 +282,12 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  #skill {
+    padding: 20px; /* Réduit le padding pour les petits écrans */
+    margin: 20px auto; /* Réduit la marge verticale */
+    font-size: 1rem; /* Ajuste la taille de la police */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Ajuste l'ombre portée */
+  }
   header h1 {
     font-size: 2rem;
   }
@@ -315,6 +331,13 @@ footer p {
 }
 
 @media (max-width: 480px) {
+  #skill {
+    padding: 15px; /* Réduit encore plus le padding */
+    margin: 10px auto; /* Réduit encore plus la marge verticale */
+    font-size: 0.9rem; /* Réduit la taille de la police pour les très petits écrans */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Réduit l'ombre portée */
+    border-radius: 8px; /* Réduit le rayon des coins pour les très petits écrans */
+  }
   header {
     padding: 20px 0;
   }
