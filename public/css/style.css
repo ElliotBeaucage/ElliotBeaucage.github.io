@@ -62,7 +62,16 @@ header nav ul li a::after {
   background-color: #00ccff;
   transition: width 0.4s ease, left 0.4s ease;
 }
-
+h2,
+h1 {
+  margin: 0px;
+}
+.fdiv {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header nav ul li a:hover::after {
   width: 100%;
   left: 0;
@@ -74,16 +83,7 @@ header nav ul li a:hover {
 
 /* Main Content */
 main {
-  padding: 60px 20px;
-  text-align: center;
   animation: fadeIn 2s ease;
-}
-
-main div h1 {
-  font-size: 2.8rem;
-  margin-bottom: 50px;
-  color: #ffffff;
-  animation: slideIn 1.5s ease-out;
 }
 
 .weather,
@@ -194,19 +194,127 @@ footer p {
   height: 50px;
   transition: transform 0.3s ease;
 }
+#aboutme {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.aboutme {
+  display: flex;
+  justify-content: center;
+}
 
 .img:hover {
   transform: scale(1.5);
 }
+
 #skill {
   background: #2a2a2a; /* Couleur de fond par défaut */
   color: #e0e0e0; /* Couleur du texte */
   padding: 40px;
   margin: 30px auto;
-  border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
+}
+#project {
+  height: 100%;
+}
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background-color: #222;
+  color: #fff;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  padding-top: 60px;
+}
+
+.sidebar.open {
+  width: 300px; /* Sidebar width when open */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #575757;
+}
+
+.typing-container {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.typing-container p {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
 
 /* Animations */
