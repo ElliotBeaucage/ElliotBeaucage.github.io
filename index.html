@@ -7,34 +7,46 @@
     <title>Portfolio - Elliot</title>
   </head>
   <body>
-    <header>
-      <h1><a href="index.html">portfolio</a></h1>
-      <nav>
+    <div id="app2">
+      <header>
+        <div class="hamburger-menu" @click="toggleMenu()">
+          &#9776;
+          <!-- Hamburger icon -->
+        </div>
+        <div>
+          <h1><a href="index.html">portfolio</a></h1>
+        </div>
+      </header>
+      <nav class="sidebar" :class="{ open: isMenuOpen }">
+        <div class="close-btn" @click="toggleMenu()">X</div>
         <ul>
-          <li><a href="aboutme.html">About me</a></li>
-          <li><a href="#project">My project</a></li>
-          <li><a href="">My skills</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <div>
-        <h1>
-          Hello, I’m Elliot, and today I’m thrilled to walk you through my
-          portfolio.
-        </h1>
-      </div>
-      <div>
-        <div id="aboutme">
-          <h2>About me</h2>
-          <p>
-            I’m a young developer who recently graduated from college with some
-            experience in front-end development. Although I haven’t been on a
-            contract with a company, I’ve been working independently on projects
-            for clients.
-          </p>
+
+      <main>
+        <div class="fdiv">
+          <div class="typing-container">
+            <h1>Hey im Elliot</h1>
+            <h2 class="typing">{{currentText}}</h2>
+          </div>
         </div>
-        <div id="Skill">
+
+        <div class="aboutme">
+          <div id="aboutme">
+            <h2>About me</h2>
+            <p>
+              I’m a young developer who recently graduated from college with
+              some experience in front-end development. Although I haven’t been
+              on a contract with a company, I’ve been working independently on
+              projects for clients.
+            </p>
+          </div>
+        </div>
+        <div id="skill">
           <h2>Technologies i work with</h2>
           <div class="skills">
             <div class="html">
@@ -69,34 +81,34 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="project">
-        <h2>Project</h2>
-        <div class="weather"><a href="#">Weather - Academic Project</a></div>
-        <div class="spotifly"><a href="#">Mp3 - Academic Project</a></div>
-        <div class="pubG6">
-          <a href="#">Restaurant Pub - Academic Project</a>
+        <div id="project">
+          <h2>Project</h2>
+          <div class="weather"><a href="#">Weather - Academic Project</a></div>
+          <div class="spotifly"><a href="#">Mp3 - Academic Project</a></div>
+          <div class="pubG6">
+            <a href="#">Restaurant Pub - Academic Project</a>
+          </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div class="contact-info">
-        <p>
-          Email:
-          <a href="mailto:elliotbeaucage2004@gmail.com" style="color: #fff"
-            >elliotbeaucage2004@gmail.com</a
-          >
-        </p>
-        <p>Phone: (514) 773-5886</p>
-      </div>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/elliot" target="_blank">LinkedIn</a>
-        <a href="https://github.com/elliot" target="_blank">GitHub</a>
-        <a href="https://twitter.com/elliot" target="_blank">Twitter</a>
-      </div>
-      <p>&copy; 2024 Elliot Beaucage. All rights reserved.</p>
-    </footer>
+      </main>
+      <footer>
+        <div class="contact-info">
+          <p>
+            Email:
+            <a href="mailto:elliotbeaucage2004@gmail.com" style="color: #fff"
+              >elliotbeaucage2004@gmail.com</a
+            >
+          </p>
+          <p>Phone: (514) 773-5886</p>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/elliot" target="_blank">LinkedIn</a>
+          <a href="https://github.com/elliot" target="_blank">GitHub</a>
+          <a href="https://twitter.com/elliot" target="_blank">Twitter</a>
+        </div>
+        <p>&copy; 2024 Elliot Beaucage. All rights reserved.</p>
+      </footer>
+    </div>
     <script type="module" src="public/js/app.js"></script>
   </body>
 </html>
