@@ -1,4 +1,3 @@
-/* Styles de base */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -14,7 +13,6 @@ a {
   color: inherit;
 }
 
-/* Header */
 header {
   background-color: #1a1a1a;
   padding: 30px 0;
@@ -81,7 +79,6 @@ header nav ul li a:hover {
   color: #00ccff;
 }
 
-/* Main Content */
 main {
   animation: fadeIn 2s ease;
 }
@@ -149,7 +146,6 @@ main {
   color: #ffffff;
 }
 
-/* Footer */
 footer {
   background: #1a1a1a;
   color: #b0b0b0;
@@ -181,10 +177,9 @@ footer p {
   font-size: 1.1rem;
 }
 
-/* Styles pour les images */
 .skills {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de se déplacer sur plusieurs lignes */
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
@@ -210,8 +205,8 @@ footer p {
 }
 
 #skill {
-  background: #2a2a2a; /* Couleur de fond par défaut */
-  color: #e0e0e0; /* Couleur du texte */
+  background: #2a2a2a;
+  color: #e0e0e0;
   padding: 40px;
   margin: 30px auto;
   text-align: center;
@@ -219,7 +214,7 @@ footer p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 300px;
 }
-/* Section Projects */
+
 #project {
   padding: 50px 0;
   text-align: center;
@@ -288,27 +283,23 @@ footer p {
   color: #ffffff;
 }
 
-/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header */
 header {
   padding: 1rem;
   background-color: #333;
   color: #fff;
 }
 
-/* Hamburger Menu */
 .hamburger-menu {
   font-size: 28px;
   cursor: pointer;
 }
 
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -323,7 +314,7 @@ header {
 }
 
 .sidebar.open {
-  width: 300px; /* Sidebar width when open */
+  width: 300px;
 }
 
 /* Close Button */
@@ -335,7 +326,6 @@ header {
   cursor: pointer;
 }
 
-/* Navigation Menu */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -383,7 +373,6 @@ header {
   }
 }
 
-/* Animations */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -456,10 +445,10 @@ header {
 
 @media (max-width: 768px) {
   #skill {
-    padding: 20px; /* Réduit le padding pour les petits écrans */
-    margin: 20px auto; /* Réduit la marge verticale */
-    font-size: 1rem; /* Ajuste la taille de la police */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Ajuste l'ombre portée */
+    padding: 20px;
+    margin: 20px auto;
+    font-size: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
   }
   header h1 {
     font-size: 2rem;
@@ -485,17 +474,14 @@ header {
   }
 
   .skills {
-    display: grid; /* Change le conteneur en grille */
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(100px, 1fr)
-    ); /* Crée une grille responsive */
-    gap: 20px; /* Espace entre les éléments */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
   }
 
   .img {
-    width: 100%; /* Les images prennent toute la largeur de la colonne */
-    height: auto; /* Maintient les proportions de l'image */
+    width: 100%;
+    height: auto;
   }
 
   footer p {
@@ -505,11 +491,11 @@ header {
 
 @media (max-width: 480px) {
   #skill {
-    padding: 15px; /* Réduit encore plus le padding */
-    margin: 10px auto; /* Réduit encore plus la marge verticale */
-    font-size: 0.9rem; /* Réduit la taille de la police pour les très petits écrans */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Réduit l'ombre portée */
-    border-radius: 8px; /* Réduit le rayon des coins pour les très petits écrans */
+    padding: 15px;
+    margin: 10px auto;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
   }
   header {
     padding: 20px 0;
