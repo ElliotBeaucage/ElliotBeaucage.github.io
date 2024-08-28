@@ -219,9 +219,75 @@ footer p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 300px;
 }
+/* Section Projects */
 #project {
-  height: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #101010;
 }
+
+#project h2 {
+  font-size: 2.5rem;
+  color: #00ccff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeIn 2s ease;
+}
+
+.project-card {
+  background: #1a1a1a;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 1s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 204, 255, 0.05),
+    rgba(255, 0, 127, 0.05)
+  );
+  z-index: 0;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card a {
+  color: #00ccff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  z-index: 10000;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+}
+
+.project-card a:hover {
+  color: #ffffff;
+}
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -474,19 +540,38 @@ header {
   }
 
   .skills {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(80px, 1fr)
-    ); /* Ajuste la taille des colonnes */
-    gap: 15px; /* Réduit l'espace entre les éléments */
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
   }
 
   .img {
-    width: 100%; /* Les images prennent toute la largeur de la colonne */
-    height: auto; /* Maintient les proportions de l'image */
+    width: 100%;
+    height: auto;
   }
 
   footer p {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .project-card {
+    margin: 15px auto;
+  }
+
+  #project h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #project h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
   }
 }
