@@ -212,7 +212,20 @@ footer p {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   height: 300px;
+}
+.html,
+.css,
+.js,
+.vue,
+.json,
+.boostrap,
+.sass,
+.wordpress,
+.php,
+.mysql {
+  cursor: pointer;
 }
 
 #project {
@@ -480,7 +493,7 @@ header {
   }
 
   .img {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 
@@ -531,7 +544,7 @@ header {
   }
 
   .img {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
 
