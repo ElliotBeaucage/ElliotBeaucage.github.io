@@ -60,16 +60,7 @@ header nav ul li a::after {
   background-color: #00ccff;
   transition: width 0.4s ease, left 0.4s ease;
 }
-h2,
-h1 {
-  margin: 0px;
-}
-.fdiv {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 header nav ul li a:hover::after {
   width: 100%;
   left: 0;
@@ -96,6 +87,24 @@ main {
   animation: fadeInUp 1.5s ease;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather {
+  background-image: url("public/img/weather-project.jpg");
+}
+
+.spotifly {
+  background-image: url("public/img/spotifly-project.jpg");
+}
+
+.pubG6 {
+  background-image: url("public/img/pubg6-project.jpg");
 }
 
 .weather::before,
@@ -107,11 +116,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 204, 255, 0.05),
-    rgba(255, 0, 127, 0.05)
-  );
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
   transition: opacity 0.4s ease;
   opacity: 0;
@@ -189,12 +194,14 @@ footer p {
   height: 50px;
   transition: transform 0.3s ease;
 }
+
 #aboutme {
   width: 500px;
   height: 300px;
   display: flex;
   flex-direction: column;
 }
+
 .aboutme {
   display: flex;
   justify-content: center;
@@ -212,9 +219,9 @@ footer p {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
   height: 300px;
 }
+
 .html,
 .css,
 .js,
@@ -296,130 +303,7 @@ footer p {
   color: #ffffff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-}
-
-.hamburger-menu {
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 0;
-  background-color: #222;
-  color: #fff;
-  overflow-x: hidden;
-  transition: width 0.3s ease;
-  padding-top: 60px;
-}
-
-.sidebar.open {
-  width: 300px;
-}
-
-/* Close Button */
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 8px 16px;
-  text-align: center;
-}
-
-.sidebar ul li a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-}
-
-.sidebar ul li a:hover {
-  background-color: #575757;
-}
-
-.typing-container {
-  height: 40px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.typing-container p {
-  font-size: 24px;
-  font-family: "Courier New", Courier, monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid;
-  animation: blink-caret 0.75s step-end infinite;
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Styles Responsives */
+/* Responsive Styles */
 @media (max-width: 1200px) {
   header h1 {
     font-size: 2.5rem;
@@ -463,6 +347,7 @@ header {
     font-size: 1rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
   }
+
   header h1 {
     font-size: 2rem;
   }
@@ -482,95 +367,54 @@ header {
   .weather,
   .spotifly,
   .pubG6 {
-    padding: 20px;
+    height: 150px;
     margin: 15px 0;
   }
 
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 20px;
-  }
-
-  .img {
-    width: 50%;
-    height: auto;
-  }
-
-  footer p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #skill {
-    padding: 15px;
-    margin: 10px auto;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-  }
-  header {
+  footer {
     padding: 20px 0;
   }
 
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header nav ul li a {
-    font-size: 0.8rem;
-  }
-
-  main div h1 {
-    font-size: 1.2rem;
-  }
-
-  .weather,
-  .spotifly,
-  .pubG6 {
-    padding: 15px;
-    margin: 10px 0;
-  }
-
-  .skills {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 15px;
-  }
-
-  .img {
-    width: 50%;
-    height: auto;
-  }
-
-  footer p {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 768px) {
-  .project-card {
-    margin: 15px auto;
-  }
-
-  #project h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+  footer a {
+    margin: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .project-card {
-    width: 90%;
-    padding: 20px;
+  header nav ul {
+    flex-direction: column;
+    gap: 5px;
   }
 
-  #project h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+  .skills {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
