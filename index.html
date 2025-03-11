@@ -9,138 +9,171 @@
   <body>
     <div id="app2">
       <header>
-       
-        <div>
-          <h1><a href="index.html">portfolio</a></h1>
+        <div class="information">
+          <p>Elliotbeaucage2004@gmail.com</p>
+          <p>(514) 773-5886</p>
         </div>
       </header>
-   
 
       <main>
         <div class="fdiv">
+          <div class="photo-container">
+            <div class="photo-wrapper">
+              <img src="public/img/IMG_6354.webp" alt="profile" class="img-profil" />
+            </div>
+            <div class="social">
+              <a
+                href="https://www.linkedin.com/in/elliot-beaucage-4a307126a/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://github.com/ElliotBeaucage" target="_blank"
+                >GitHub</a
+              >
+              <a href="https://x.com/zapssrl" target="_blank">Twitter</a>
+            </div>
+          </div>
           <div class="typing-container">
-            <h1>Hey im Elliot</h1>
-            <h2 class="typing">{{currentText}}</h2>
+            <h1>Bonjour, je m'appelle Elliot.</h1>
+            <h2 class="typing-dev">{{currentText}}</h2>
+            <div class="typing">
+              <span>Autodidacte, passionné par les nouvelles technologies.<br>
+                Aussi, passionné par le Surf, la Pêche et Voyager.
+              </span>
+              <span v-if="showCursor" class="cursor">|</span>
+            </div>
           </div>
         </div>
 
-        <div class="aboutme">
-          <div id="aboutme">
-            <h2>About me</h2>
-            <p>
-              I’m a young developer who recently graduated from college with
-              some experience in front-end development. Although I haven’t been
-              on a contract with a company, I’ve been working independently on
-              projects for clients.
-            </p>
-          </div>
-        </div>
         <div id="skill">
-          <h2>Technologies i work with</h2>
+          <h2>Compétence</h2>
           <div class="skills">
-            <div class="html">
-              <img src="public/img/pngegg (9).png" alt="" class="img" />
-            </div>
-            <div class="css">
-              <img src="public/img/pngegg (1).png" alt="" class="img" />
-            </div>
-            <div class="js">
-              <img src="public/img/js.png" alt="" class="img" />
-            </div>
-            <div class="vue">
-              <img src="public/img/pngegg (2).png" alt="" class="img" />
-            </div>
-            <div class="json">
-              <img src="public/img/pngegg (3).png" alt="" class="img" />
-            </div>
-            <div class="bootsrap">
-              <img src="public/img/pngegg (8).png" alt="" class="img" />
-            </div>
-            <div class="sass">
-              <img src="public/img/pngegg (4).png" alt="" class="img" />
-            </div>
-            <div class="wordpress">
-              <img src="public/img/pngegg (5).png" alt="" class="img" />
-            </div>
-            <div class="php">
-              <img src="public/img/pngegg (7).png" alt="" class="img" />
-            </div>
-            <div class="mysql">
-              <img src="public/img/pngegg (6).png" alt="" class="img" />
-            </div>
+            <ul>
+              <h3>Front-end</h3>
+              <li>Javascript</li>
+              <li>Vue.js</li>
+              <li>Html</li>
+              <li>Css</li>
+              <li>Sass</li>
+              <li>Tailwind</li>
+              <li>Bootsrap</li>
+            </ul>
+            <ul>
+              <h3>Back-end</h3>
+              <li>Laravel</li>
+              <li>Php</li>
+              <li>MySQL</li>
+              <li>DataBase</li>
+            </ul>
+            <ul>
+              <h3>Autre</h3>
+              <li>GitHub</li>
+            </ul>
           </div>
         </div>
 
         <div id="projects">
-          <h2>Projects</h2>
+          <div class="project-wrapper">
+            <h2 class="project">Projets</h2>
+          </div>
           <div class="projects-container">
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>Weather - Projet Académique</h3>
-                <p>App qui utilise une API pour afficher des données de meteo</p>
+                <h4>Vue.js</h4>
+                <p>
+                  App qui utilise une API pour afficher des données de meteo.
+                </p>
+
                 <a href="#" class="project-link">Voir Projet</a>
               </div>
             </div>
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>Mp3 - Projet Académique</h3>
+                <h4>Vue.js</h4>
                 <p>App de music</p>
                 <a href="#" class="project-link">Voir Projet</a>
               </div>
             </div>
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>Restaurant Pub - Projet Académique</h3>
+                <h4>Laravel</h4>
                 <p>Site web de Restaurant</p>
-                <a href="https://2138164.cpsw-fcsei.com/projet_web1/" class="project-link">Voir Projet</a>
+                <a
+                  target="_blank"
+                  href="https://2138164.cpsw-fcsei.com/projet_web1/"
+                  class="project-link"
+                  >Voir Projet</a
+                >
               </div>
             </div>
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>Equi-tel.com</h3>
+                <h4>Wordpress</h4>
                 <p>Wordpress website pour la compagnie Equi-tel</p>
-                <a href="https://equi-tel.com/" class="project-link">Voir Projet</a>
+
+                <a
+                  target="_blank"
+                  href="https://equi-tel.com/"
+                  class="project-link"
+                  >Voir Projet</a
+                >
               </div>
             </div>
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>Equi-tel Boutique</h3>
+                <h4>Wordpress</h4>
                 <p>Wordpress boutique pour la compagnie Equi-tel</p>
-                <a href="https://equi-tel.com/boutique/" class="project-link">Voir Projet</a>
+
+                <a
+                  target="_blank"
+                  href="https://equi-tel.com/boutique/"
+                  class="project-link"
+                  >Voir Projet</a
+                >
               </div>
             </div>
             <div class="project-card">
-             
               <div class="project-info">
                 <h3>MissionLTE</h3>
+                <h4>Wordpress</h4>
                 <p>Site wordpress pour la compagnie Equi-tel</p>
-                <a href="https://www.missionlte.ca/" class="project-link">Voir Projet</a>
+
+                <a
+                  target="_blank"
+                  href="https://www.missionlte.ca/"
+                  class="project-link"
+                  >Voir Projet</a
+                >
               </div>
             </div>
           </div>
         </div>
+       
       </main>
       <footer>
         <div class="contact-info">
           <p>
-            Email:
             <a href="mailto:elliotbeaucage2004@gmail.com" style="color: #fff"
               >elliotbeaucage2004@gmail.com</a
             >
           </p>
-          <p>Phone: (514) 773-5886</p>
+          <p>(514) 773-5886</p>
         </div>
         <div class="social-links">
-          <a href="https://linkedin.com/in/elliot" target="_blank">LinkedIn</a>
-          <a href="https://github.com/elliot" target="_blank">GitHub</a>
-          <a href="https://twitter.com/elliot" target="_blank">Twitter</a>
+          <a
+            href="https://www.linkedin.com/in/elliot-beaucage-4a307126a/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/ElliotBeaucage" target="_blank">GitHub</a>
+          <a href="https://x.com/zapssrl" target="_blank">Twitter</a>
         </div>
-        <p>&copy; 2024 Elliot Beaucage. All rights reserved.</p>
+        <p>&copy; 2024 Elliot Beaucage. Tout droit réservé.</p>
       </footer>
     </div>
     <script type="module" src="public/js/app.js"></script>
