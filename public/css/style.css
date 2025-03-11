@@ -2,20 +2,73 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #101010;
-  color: #e0e0e0;
+  background-color: #fff;
+  color: black;
   line-height: 1.7;
   overflow-x: hidden;
 }
-.fdiv
+h4
 {
+  color: #fff;
+}
+
+
+.fdiv {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 400px;
 }
-.typing-container
-{
-  width: 300px;
-  height: 200px;
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.social-links {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.social {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.social a {
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social a:hover {
+  color: #139cac;
+  transform: scale(1.1);
+}
+
+.social-links > a:hover {
+  color: #139cac;
+}
+.typing-dev {
+  height: 50px;
+}
+.cursor {
+  color: black;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+}
+
+.fdiv > div > h1,
+h2 {
+  margin: 0;
+}
+.typing-container {
+  width: 500px;
+  height: 100px;
+
   text-align: center;
 }
 
@@ -27,9 +80,26 @@ a {
 header {
   background-color: #1a1a1a;
   padding: 30px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-evenly;
+}
+.form {
+  width: 100%;
+  height: 600px;
+}
+.information {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.information > p:first-child {
+  margin: 0;
   text-align: center;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  border-right: 2px solid #fff;
+  padding-right: 10px;
 }
 
 header h1 {
@@ -37,13 +107,33 @@ header h1 {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: #00e4ff;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
-header h1:hover {
-  color: #ff00a6;
+.photo-container {
+  display: flex;
+  flex-direction: column;
 }
+.photo-wrapper {
+  width: 200px; /* Ajuste selon tes besoins */
+  height: 200px; /* Doit être égal à width pour un cercle parfait */
+  border-radius: 100%;
+  overflow: hidden; /* Coupe tout ce qui dépasse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-profil
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: crisp-edges; /* Améliore la netteté sur certains navigateurs */
+  image-rendering: -webkit-optimize-contrast; /* Spécifique à WebKit */
+}
+
+
 
 header nav ul {
   list-style: none;
@@ -54,112 +144,8 @@ header nav ul {
   gap: 40px;
 }
 
-header nav ul li a {
-  color: #e0e0e0;
-  font-size: 1.2rem;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-header nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #00ccff;
-  transition: width 0.4s ease, left 0.4s ease;
-}
-
-header nav ul li a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-header nav ul li a:hover {
-  color: #00ccff;
-}
-
 main {
   animation: fadeIn 2s ease;
-}
-
-.weather,
-.spotifly,
-.pubG6 {
-  background: #232323;
-  color: #e0e0e0;
-  padding: 40px;
-  margin: 30px 0;
-  text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 1.5s ease;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.weather {
-  background-image: url("public/img/weather-project.jpg");
-}
-
-.spotifly {
-  background-image: url("public/img/spotifly-project.jpg");
-}
-
-.pubG6 {
-  background-image: url("public/img/pubg6-project.jpg");
-}
-
-.weather::before,
-.spotifly::before,
-.pubG6::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-  transition: opacity 0.4s ease;
-  opacity: 0;
-}
-
-.weather:hover::before,
-.spotifly:hover::before,
-.pubG6:hover::before {
-  opacity: 1;
-}
-
-.weather a,
-.spotifly a,
-.pubG6 a {
-  color: #00ccff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.weather:hover,
-.spotifly:hover,
-.pubG6:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
-}
-
-.weather a:hover,
-.spotifly a:hover,
-.pubG6 a:hover {
-  color: #ffffff;
 }
 
 footer {
@@ -168,7 +154,7 @@ footer {
   text-align: center;
   padding: 40px 0;
   margin-top: 60px;
-  border-top: 2px solid #00ccff;
+
   animation: fadeIn 2s ease;
 }
 
@@ -178,7 +164,7 @@ footer .social-links {
 }
 
 footer a {
-  color: #00ccff;
+  color: #fff;
   margin: 0 15px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -195,9 +181,13 @@ footer p {
 
 .skills {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  margin-top: 30px;
+  gap: 100px;
+}
+.skills > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .img {
@@ -206,16 +196,12 @@ footer p {
   transition: transform 0.3s ease;
 }
 
-#aboutme {
-  width: 500px;
+.aboutme {
+  width: 100%;
   height: 300px;
   display: flex;
-  flex-direction: column;
-}
-
-.aboutme {
-  display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .img:hover {
@@ -223,42 +209,59 @@ footer p {
 }
 
 #skill {
-  background: #2a2a2a;
-  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1a1a1a;
+  color: #fff;
   padding: 40px;
   margin: 30px auto;
-  text-align: center;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 300px;
+  height: 400px;
+}
+#skill > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  width: 400px;
+}
+#skill > h2::before,
+#skill > h2::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 20px;
 }
 
-.html,
-.css,
-.js,
-.vue,
-.json,
-.boostrap,
-.sass,
-.wordpress,
-.php,
-.mysql {
-  cursor: pointer;
+.project-wrapper
+{
+  display: flex;
+  justify-content: center;
 }
 
-#project {
-  padding: 50px 0;
+h2.project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  color: black;
   text-align: center;
-  background-color: #101010;
+  width: 400px;
 }
-
-#project h2 {
-  font-size: 2.5rem;
-  color: #00ccff;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  animation: fadeIn 2s ease;
+.project::before,
+.project::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: black;
+  margin: 0 20px;
 }
 
 .project-card {
@@ -266,38 +269,15 @@ footer p {
   padding: 30px;
   margin: 20px auto;
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 80%;
   max-width: 500px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-  animation: fadeInUp 1s ease;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 204, 255, 0.05),
-    rgba(255, 0, 127, 0.05)
-  );
-  z-index: 0;
-  transition: opacity 0.4s ease;
-  opacity: 0;
-}
-
-.project-card:hover::before {
-  opacity: 1;
 }
 
 .project-card a {
-  color: #00ccff;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 500;
   z-index: 10000;
@@ -305,13 +285,8 @@ footer p {
   transition: color 0.3s ease;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
-}
-
 .project-card a:hover {
-  color: #ffffff;
+  color: #00ccff;
 }
 .projects-container {
   display: grid;
@@ -324,12 +299,6 @@ footer p {
   background-color: #2d2d2d;
   border-radius: 8px;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-info h3 {
@@ -343,18 +312,6 @@ footer p {
   color: #ccc;
   margin-bottom: 15px;
 }
-
-.project-link {
-  color: #00bcd4;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.project-link:hover {
-  color: #f2f2f2;
-}
-
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -373,13 +330,6 @@ footer p {
 
   main div h1 {
     font-size: 2rem;
-  }
-
-  .weather,
-  .spotifly,
-  .pubG6 {
-    padding: 30px;
-    margin: 20px 0;
   }
 
   .skills {
@@ -417,13 +367,6 @@ footer p {
     font-size: 1.5rem;
   }
 
-  .weather,
-  .spotifly,
-  .pubG6 {
-    height: 150px;
-    margin: 15px 0;
-  }
-
   footer {
     padding: 20px 0;
   }
@@ -431,16 +374,23 @@ footer p {
   footer a {
     margin: 0 10px;
   }
+  .fdiv {
+    flex-direction: column;
+  }
+  .typing-container {
+    width: 100%;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   header nav ul {
     flex-direction: column;
     gap: 5px;
   }
 
   .skills {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     gap: 10px;
   }
 
@@ -449,6 +399,8 @@ footer p {
     height: 30px;
   }
 }
+
+/* Animation Keyframes */
 
 @keyframes fadeIn {
   from {
@@ -469,5 +421,10 @@ footer p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
