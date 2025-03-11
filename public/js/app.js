@@ -3,49 +3,56 @@ import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 createApp({
   data() {
     return {
-      sentences: [
-        "Front-end developer.",
-        "Back-end developer",
-        'Im creative',
-        
-      ],
+      sentences: ["Développeur front-end.", "Développeur back-end."],
       currentText: "",
       currentIndex: 0,
       charIndex: 0,
-      typingSpeed: 100,
-      delayBetweenSentences: 2000,
-      typingInterval: null,
-      isMenuOpen: false,
+      typingSpeed: 70, // Vitesse de frappe (ms par lettre)
+      delayBeforeDeleting: 1000, // Pause avant effacement (ms)
+      deletingSpeed: 50, // Vitesse d'effacement (ms par lettre)
+      isDeleting: false,
+      name: "",
+      email: "",
+      message: "",
+      statusMessage: "",
+      success: false,
+      loading: false,
     };
   },
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
     startTypingAnimation() {
-      this.typingInterval = setInterval(this.typeCharacter, this.typingSpeed);
+      if (!this.isDeleting) {
+        this.typeCharacter();
+      } else {
+        this.deleteCharacter();
+      }
     },
+
     typeCharacter() {
       const currentSentence = this.sentences[this.currentIndex];
 
-      //char index is always at 0 so currenttext is = to sentence[0(0 is the first letter in the sentence so charindex)] and then charindex++ mean plus 1 t'ill theres none
       if (this.charIndex < currentSentence.length) {
         this.currentText += currentSentence[this.charIndex];
         this.charIndex++;
+        setTimeout(this.startTypingAnimation, this.typingSpeed);
       } else {
-        clearInterval(this.typingInterval);
-        setTimeout(this.prepareNextSentence, this.delayBetweenSentences);
+        setTimeout(() => {
+          this.isDeleting = true;
+          this.startTypingAnimation();
+        }, this.delayBeforeDeleting);
       }
     },
-    prepareNextSentence() {
-      this.charIndex = 0;
-      this.currentText = "";
-      this.currentIndex = (this.currentIndex + 1) % this.sentences.length;
-      this.startTypingAnimation();
-    },
 
-    beforeDestroy() {
-      clearInterval(this.typingInterval);
+    deleteCharacter() {
+      if (this.charIndex > 0) {
+        this.currentText = this.currentText.slice(0, -1);
+        this.charIndex--;
+        setTimeout(this.startTypingAnimation, this.deletingSpeed);
+      } else {
+        this.isDeleting = false;
+        this.currentIndex = (this.currentIndex + 1) % this.sentences.length;
+        setTimeout(this.startTypingAnimation, this.typingSpeed);
+      }
     },
   },
 
