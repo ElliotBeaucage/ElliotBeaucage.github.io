@@ -11,12 +11,6 @@ createApp({
       delayBeforeDeleting: 1000, // Pause avant effacement (ms)
       deletingSpeed: 50, // Vitesse d'effacement (ms par lettre)
       isDeleting: false,
-      name: "",
-      email: "",
-      message: "",
-      statusMessage: "",
-      success: false,
-      loading: false,
     };
   },
   methods: {
