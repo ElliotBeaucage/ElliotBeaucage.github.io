@@ -341,6 +341,9 @@ h2.project {
     width: 40px;
     height: 40px;
   }
+     .projects-container{
+     grid-template-columns: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -380,9 +383,7 @@ h2.project {
   .typing-container {
     width: 100%;
   }
-    .projects-container{
-     grid-template-columns: none;
-  }
+ 
 }
 
 @media (max-width: 420px) {
