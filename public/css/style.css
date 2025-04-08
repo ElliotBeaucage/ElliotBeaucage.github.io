@@ -398,6 +398,10 @@ h2.project {
     width: 30px;
     height: 30px;
   }
+
+  .projects-container{
+     grid-template-columns: none;
+  }
 }
 
 /* Animation Keyframes */
