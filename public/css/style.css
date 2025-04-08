@@ -380,6 +380,9 @@ h2.project {
   .typing-container {
     width: 100%;
   }
+    .projects-container{
+     grid-template-columns: none;
+  }
 }
 
 @media (max-width: 420px) {
@@ -399,9 +402,7 @@ h2.project {
     height: 30px;
   }
 
-  .projects-container{
-     grid-template-columns: none;
-  }
+
 }
 
 /* Animation Keyframes */
