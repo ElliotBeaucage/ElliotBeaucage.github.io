@@ -1,56 +1,130 @@
-import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+javascript;
+/*
+|--------------------------------------------------------------------------
+| MOBILE NAVIGATION
+|--------------------------------------------------------------------------
+*/
 
-createApp({
-  data() {
-    return {
-      sentences: ["Développeur front-end.", "Développeur back-end."],
-      currentText: "",
-      currentIndex: 0,
-      charIndex: 0,
-      typingSpeed: 70, // Vitesse de frappe (ms par lettre)
-      delayBeforeDeleting: 1000, // Pause avant effacement (ms)
-      deletingSpeed: 50, // Vitesse d'effacement (ms par lettre)
-      isDeleting: false,
-    };
-  },
-  methods: {
-    startTypingAnimation() {
-      if (!this.isDeleting) {
-        this.typeCharacter();
-      } else {
-        this.deleteCharacter();
+const mobileMenu = document.getElementById("mobileMenu");
+const navLinks = document.getElementById("navLinks");
+
+mobileMenu.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+/*
+|--------------------------------------------------------------------------
+| CLOSE MOBILE MENU AFTER CLICKING A LINK
+|--------------------------------------------------------------------------
+*/
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+/*
+|--------------------------------------------------------------------------
+| HEADER SCROLL EFFECT
+|--------------------------------------------------------------------------
+*/
+
+const header = document.getElementById("header");
+
+function updateHeader() {
+  if (window.scrollY > 30) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+}
+
+window.addEventListener("scroll", updateHeader);
+
+updateHeader();
+
+/*
+|--------------------------------------------------------------------------
+| SCROLL REVEAL
+|--------------------------------------------------------------------------
+*/
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        revealObserver.unobserve(entry.target);
       }
-    },
-
-    typeCharacter() {
-      const currentSentence = this.sentences[this.currentIndex];
-
-      if (this.charIndex < currentSentence.length) {
-        this.currentText += currentSentence[this.charIndex];
-        this.charIndex++;
-        setTimeout(this.startTypingAnimation, this.typingSpeed);
-      } else {
-        setTimeout(() => {
-          this.isDeleting = true;
-          this.startTypingAnimation();
-        }, this.delayBeforeDeleting);
-      }
-    },
-
-    deleteCharacter() {
-      if (this.charIndex > 0) {
-        this.currentText = this.currentText.slice(0, -1);
-        this.charIndex--;
-        setTimeout(this.startTypingAnimation, this.deletingSpeed);
-      } else {
-        this.isDeleting = false;
-        this.currentIndex = (this.currentIndex + 1) % this.sentences.length;
-        setTimeout(this.startTypingAnimation, this.typingSpeed);
-      }
-    },
+    });
   },
-
-  mounted() {
-    this.startTypingAnimation();
+  {
+    threshold: 0.12,
   },
-}).mount("#app2");
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+/*
+|--------------------------------------------------------------------------
+| ACTIVE NAVIGATION
+|--------------------------------------------------------------------------
+*/
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const id = entry.target.getAttribute("id");
+
+      navigationLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  },
+  {
+    rootMargin: "-35% 0px -55% 0px",
+  },
+);
+
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+});
+
+/*
+|--------------------------------------------------------------------------
+| CURRENT YEAR
+|--------------------------------------------------------------------------
+*/
+
+const year = document.getElementById("year");
+
+year.textContent = new Date().getFullYear();
+
+/*
+|--------------------------------------------------------------------------
+| ESCAPE KEY
+|--------------------------------------------------------------------------
+*/
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    navLinks.classList.remove("open");
+  }
+});
