@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +8,7 @@
 
     <meta
       name="description"
-      content="Elliot Beaucage is a backend-focused software developer specializing in Laravel, PHP, MySQL and modern web applications."
+      content="Elliot Beaucage is a software developer specializing in backend systems, Laravel, PHP, MySQL, AI integration and automation."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,10 +20,6 @@
     />
 
     <style>
-      /* =========================================================
-           VARIABLES
-        ========================================================= */
-
       :root {
         --bg: #08090b;
         --bg-soft: #0d0f12;
@@ -41,14 +36,11 @@
         --accent: #7c5cff;
         --accent-light: #a594ff;
 
-        --max-width: 1180px;
+        --ai: #8b7cff;
 
+        --max-width: 1180px;
         --radius: 18px;
       }
-
-      /* =========================================================
-           RESET
-        ========================================================= */
 
       * {
         margin: 0;
@@ -78,8 +70,8 @@
       }
 
       /* =========================================================
-           BACKGROUND
-        ========================================================= */
+         BACKGROUND
+      ========================================================= */
 
       body::before {
         content: "";
@@ -103,12 +95,12 @@
 
       .glow {
         position: fixed;
-        width: 600px;
-        height: 600px;
+        width: 650px;
+        height: 650px;
 
         background: radial-gradient(
           circle,
-          rgba(124, 92, 255, 0.12),
+          rgba(124, 92, 255, 0.13),
           transparent 65%
         );
 
@@ -120,12 +112,11 @@
       }
 
       /* =========================================================
-           GLOBAL
-        ========================================================= */
+         GLOBAL
+      ========================================================= */
 
       .container {
         width: min(calc(100% - 40px), var(--max-width));
-
         margin-inline: auto;
       }
 
@@ -162,15 +153,15 @@
       }
 
       .section-description {
-        max-width: 650px;
+        max-width: 680px;
 
         color: var(--text-soft);
         font-size: 17px;
       }
 
       /* =========================================================
-           NAVBAR
-        ========================================================= */
+         NAVBAR
+      ========================================================= */
 
       header {
         position: fixed;
@@ -256,8 +247,8 @@
       }
 
       /* =========================================================
-           HERO
-        ========================================================= */
+         HERO
+      ========================================================= */
 
       .hero {
         min-height: 100vh;
@@ -305,7 +296,7 @@
       }
 
       .hero h1 {
-        max-width: 850px;
+        max-width: 900px;
 
         font-size: clamp(50px, 7vw, 88px);
         line-height: 0.98;
@@ -319,7 +310,7 @@
       }
 
       .hero-description {
-        max-width: 680px;
+        max-width: 700px;
 
         color: var(--text-soft);
 
@@ -370,6 +361,10 @@
         border-color: var(--border-hover);
         background: rgba(255, 255, 255, 0.04);
       }
+
+      /* =========================================================
+         TERMINAL
+      ========================================================= */
 
       .hero-terminal {
         background: var(--card);
@@ -429,6 +424,10 @@
         color: #555c66;
       }
 
+      .code-ai {
+        color: var(--accent-light);
+      }
+
       .terminal-status {
         margin-top: 25px;
         padding-top: 18px;
@@ -439,8 +438,8 @@
       }
 
       /* =========================================================
-           ABOUT
-        ========================================================= */
+         ABOUT
+      ========================================================= */
 
       .about-grid {
         display: grid;
@@ -462,6 +461,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+
+        margin-top: 30px;
       }
 
       .stat {
@@ -474,7 +475,7 @@
       }
 
       .stat-number {
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 700;
         letter-spacing: -1px;
       }
@@ -486,8 +487,8 @@
       }
 
       /* =========================================================
-           EXPERIENCE
-        ========================================================= */
+         EXPERIENCE
+      ========================================================= */
 
       .experience-list {
         margin-top: 60px;
@@ -523,7 +524,7 @@
 
       .experience-content p {
         color: var(--text-soft);
-        max-width: 750px;
+        max-width: 780px;
       }
 
       .experience-tags {
@@ -546,9 +547,15 @@
         font-size: 11px;
       }
 
+      .tag.ai-tag {
+        color: var(--accent-light);
+        border-color: rgba(124, 92, 255, 0.25);
+        background: rgba(124, 92, 255, 0.06);
+      }
+
       /* =========================================================
-           SKILLS
-        ========================================================= */
+         SKILLS
+      ========================================================= */
 
       .skills-grid {
         display: grid;
@@ -575,6 +582,17 @@
         background: var(--card-hover);
       }
 
+      .skill-card.ai-card {
+        border-color: rgba(124, 92, 255, 0.2);
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(124, 92, 255, 0.08),
+            transparent 50%
+          ),
+          var(--card);
+      }
+
       .skill-card h3 {
         font-size: 17px;
         margin-bottom: 17px;
@@ -598,9 +616,14 @@
         font-size: 13px;
       }
 
+      .skill.ai {
+        color: var(--accent-light);
+        background: rgba(124, 92, 255, 0.08);
+      }
+
       /* =========================================================
-           PROJECTS
-        ========================================================= */
+         PROJECTS
+      ========================================================= */
 
       .projects {
         background: var(--bg-soft);
@@ -638,6 +661,18 @@
       .project.featured {
         grid-column: span 2;
         min-height: 440px;
+      }
+
+      .project.ai-project {
+        border-color: rgba(124, 92, 255, 0.22);
+
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(124, 92, 255, 0.08),
+            transparent 45%
+          ),
+          var(--card);
       }
 
       .project-top {
@@ -686,7 +721,7 @@
       }
 
       .project p {
-        max-width: 680px;
+        max-width: 700px;
 
         color: var(--text-soft);
       }
@@ -706,13 +741,118 @@
         font-size: 11px;
       }
 
+      .project-badge {
+        display: inline-flex;
+        width: fit-content;
+
+        margin-bottom: 14px;
+        padding: 5px 9px;
+
+        border: 1px solid rgba(124, 92, 255, 0.25);
+        border-radius: 7px;
+
+        background: rgba(124, 92, 255, 0.07);
+
+        color: var(--accent-light);
+
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+      }
+
       /* =========================================================
-           ENGINEERING APPROACH
-        ========================================================= */
+         AI SECTION
+      ========================================================= */
+
+      .ai-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ai-section::after {
+        content: "";
+
+        position: absolute;
+
+        width: 500px;
+        height: 500px;
+
+        right: -250px;
+        top: 100px;
+
+        background: radial-gradient(
+          circle,
+          rgba(124, 92, 255, 0.08),
+          transparent 65%
+        );
+
+        pointer-events: none;
+      }
+
+      .ai-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+
+        margin-top: 60px;
+      }
+
+      .ai-card-large {
+        padding: 35px;
+
+        border: 1px solid rgba(124, 92, 255, 0.2);
+        border-radius: var(--radius);
+
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(124, 92, 255, 0.09),
+            transparent 50%
+          ),
+          var(--card);
+      }
+
+      .ai-card-large h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .ai-card-large p {
+        color: var(--text-soft);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .ai-points {
+        display: grid;
+        gap: 12px;
+      }
+
+      .ai-point {
+        padding: 20px;
+
+        border: 1px solid var(--border);
+        border-radius: 14px;
+
+        background: var(--card);
+      }
+
+      .ai-point h4 {
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+
+      .ai-point p {
+        color: var(--text-muted);
+        font-size: 13px;
+      }
+
+      /* =========================================================
+         ENGINEERING APPROACH
+      ========================================================= */
 
       .principles-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 15px;
 
         margin-top: 60px;
@@ -747,8 +887,8 @@
       }
 
       /* =========================================================
-           CONTACT
-        ========================================================= */
+         CONTACT
+      ========================================================= */
 
       .contact {
         text-align: center;
@@ -796,8 +936,8 @@
       }
 
       /* =========================================================
-           FOOTER
-        ========================================================= */
+         FOOTER
+      ========================================================= */
 
       footer {
         padding: 30px 0;
@@ -815,8 +955,8 @@
       }
 
       /* =========================================================
-           REVEAL ANIMATION
-        ========================================================= */
+         REVEAL ANIMATION
+      ========================================================= */
 
       .reveal {
         opacity: 0;
@@ -833,8 +973,14 @@
       }
 
       /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+         RESPONSIVE
+      ========================================================= */
+
+      @media (max-width: 1000px) {
+        .principles-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
       @media (max-width: 850px) {
         .nav-links {
@@ -869,7 +1015,8 @@
         }
 
         .hero-grid,
-        .about-grid {
+        .about-grid,
+        .ai-grid {
           grid-template-columns: 1fr;
           gap: 50px;
         }
@@ -887,7 +1034,7 @@
         }
 
         .principles-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
         }
 
         .experience-item {
@@ -910,7 +1057,8 @@
         }
 
         .stats,
-        .skills-grid {
+        .skills-grid,
+        .principles-grid {
           grid-template-columns: 1fr;
         }
 
@@ -924,6 +1072,11 @@
 
         .footer-inner {
           flex-direction: column;
+        }
+
+        .terminal-body {
+          font-size: 11px;
+          padding: 20px;
         }
       }
     </style>
@@ -949,7 +1102,12 @@
             <a href="#contact" class="nav-cta">Contact</a>
           </div>
 
-          <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+          <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
             ☰
           </button>
         </nav>
@@ -958,8 +1116,8 @@
 
     <main>
       <!-- =====================================================
-             HERO
-        ====================================================== -->
+           HERO
+      ====================================================== -->
 
       <section class="hero" id="home">
         <div class="container">
@@ -976,9 +1134,10 @@
               </h1>
 
               <p class="hero-description">
-                Backend-focused developer specializing in Laravel, PHP and
-                MySQL, with experience building, deploying and maintaining
-                business applications used in real-world environments.
+                Backend-focused software developer specializing in Laravel, PHP
+                and MySQL, with hands-on experience integrating AI, automating
+                workflows and building software used in real-world business
+                environments.
               </p>
 
               <div class="hero-buttons">
@@ -1008,12 +1167,12 @@
                 <div class="code-line">
                   <span class="code-keyword">const</span>
                   developer =
-                  <span class="code-variable">{ </span>
+                  <span class="code-variable">{</span>
                 </div>
 
                 <div class="code-line">
                   &nbsp;&nbsp;focus:
-                  <span class="code-string"> "backend" </span>,
+                  <span class="code-string"> "backend + AI" </span>,
                 </div>
 
                 <div class="code-line">
@@ -1024,6 +1183,11 @@
                 <div class="code-line">
                   &nbsp;&nbsp;frontend:
                   <span class="code-string"> "Vue.js / JavaScript" </span>,
+                </div>
+
+                <div class="code-line">
+                  &nbsp;&nbsp;ai:
+                  <span class="code-ai"> "integration & automation" </span>,
                 </div>
 
                 <div class="code-line">
@@ -1043,8 +1207,8 @@
       </section>
 
       <!-- =====================================================
-             ABOUT
-        ====================================================== -->
+           ABOUT
+      ====================================================== -->
 
       <section id="about">
         <div class="container">
@@ -1064,14 +1228,21 @@
               <p>
                 I enjoy turning business requirements into practical software:
                 designing databases, building application logic, creating APIs,
-                deploying systems and maintaining them once they're in
-                production.
+                integrating external services, deploying systems and maintaining
+                them once they're in production.
+              </p>
+
+              <p>
+                I also work extensively with AI as both an engineering tool and
+                a technology that can be integrated into software systems. I use
+                AI to accelerate development, automate workflows, process
+                information and build smarter application features.
               </p>
 
               <p>
                 My main stack is Laravel, PHP, MySQL and JavaScript, while I
-                also work with Vue.js, Tailwind CSS, Git and Linux-based
-                environments.
+                also work with Vue.js, Tailwind CSS, Git, Linux environments,
+                APIs and AI-powered workflows.
               </p>
 
               <div class="stats">
@@ -1079,6 +1250,12 @@
                   <div class="stat-number">Backend</div>
 
                   <div class="stat-label">Laravel / PHP</div>
+                </div>
+
+                <div class="stat">
+                  <div class="stat-number">AI</div>
+
+                  <div class="stat-label">Integration & automation</div>
                 </div>
 
                 <div class="stat">
@@ -1092,12 +1269,6 @@
 
                   <div class="stat-label">Deployment & maintenance</div>
                 </div>
-
-                <div class="stat">
-                  <div class="stat-number">Business</div>
-
-                  <div class="stat-label">Real-world applications</div>
-                </div>
               </div>
             </div>
           </div>
@@ -1105,8 +1276,8 @@
       </section>
 
       <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
+           EXPERIENCE
+      ====================================================== -->
 
       <section id="experience">
         <div class="container">
@@ -1140,13 +1311,28 @@
                   implementation, deployment and maintenance.
                 </p>
 
+                <p style="margin-top: 15px">
+                  Integrate AI capabilities into software and workflows where
+                  they can improve automation, information processing and
+                  internal productivity.
+                </p>
+
                 <div class="experience-tags">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">PHP</span>
-                  <span class="tag">MySQL</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Linux</span>
-                  <span class="tag">Git</span>
+                  <span class="tag"> Laravel </span>
+
+                  <span class="tag"> PHP </span>
+
+                  <span class="tag"> MySQL </span>
+
+                  <span class="tag"> JavaScript </span>
+
+                  <span class="tag ai-tag"> AI Integration </span>
+
+                  <span class="tag ai-tag"> Automation </span>
+
+                  <span class="tag"> Linux </span>
+
+                  <span class="tag"> Git </span>
                 </div>
               </div>
             </article>
@@ -1167,12 +1353,19 @@
                 </p>
 
                 <div class="experience-tags">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">PHP</span>
-                  <span class="tag">MySQL</span>
-                  <span class="tag">CRUD</span>
-                  <span class="tag">Authentication</span>
-                  <span class="tag">Deployment</span>
+                  <span class="tag"> Laravel </span>
+
+                  <span class="tag"> PHP </span>
+
+                  <span class="tag"> MySQL </span>
+
+                  <span class="tag"> CRUD </span>
+
+                  <span class="tag"> Authentication </span>
+
+                  <span class="tag"> Deployment </span>
+
+                  <span class="tag ai-tag"> AI </span>
                 </div>
               </div>
             </article>
@@ -1181,8 +1374,8 @@
       </section>
 
       <!-- =====================================================
-             SKILLS
-        ====================================================== -->
+           SKILLS
+      ====================================================== -->
 
       <section id="skills">
         <div class="container">
@@ -1192,12 +1385,15 @@
             <h2 class="section-title">Tools I build with.</h2>
 
             <p class="section-description">
-              A backend-oriented stack with enough frontend, infrastructure and
-              tooling knowledge to own a feature from development to production.
+              A backend-oriented stack with frontend, infrastructure, automation
+              and AI capabilities to own a feature from development to
+              production.
             </p>
           </div>
 
           <div class="skills-grid">
+            <!-- BACKEND -->
+
             <div class="skill-card reveal">
               <h3>Backend</h3>
 
@@ -1213,6 +1409,32 @@
               </div>
             </div>
 
+            <!-- AI -->
+
+            <div class="skill-card ai-card reveal">
+              <h3>AI & Automation</h3>
+
+              <div class="skill-list">
+                <span class="skill ai"> AI Integration </span>
+
+                <span class="skill ai"> LLM Integration </span>
+
+                <span class="skill ai"> AI APIs </span>
+
+                <span class="skill ai"> Prompt Engineering </span>
+
+                <span class="skill ai"> AI-assisted Development </span>
+
+                <span class="skill ai"> Workflow Automation </span>
+
+                <span class="skill ai"> Structured AI Output </span>
+
+                <span class="skill ai"> JSON </span>
+              </div>
+            </div>
+
+            <!-- FRONTEND -->
+
             <div class="skill-card reveal">
               <h3>Frontend</h3>
 
@@ -1226,6 +1448,8 @@
                 <span class="skill">Responsive Design</span>
               </div>
             </div>
+
+            <!-- DATA -->
 
             <div class="skill-card reveal">
               <h3>Data & APIs</h3>
@@ -1241,6 +1465,8 @@
               </div>
             </div>
 
+            <!-- DEVELOPMENT -->
+
             <div class="skill-card reveal">
               <h3>Development</h3>
 
@@ -1253,6 +1479,8 @@
                 <span class="skill">VS Code</span>
               </div>
             </div>
+
+            <!-- INFRASTRUCTURE -->
 
             <div class="skill-card reveal">
               <h3>Infrastructure</h3>
@@ -1268,6 +1496,8 @@
                 <span class="skill">SSL / TLS</span>
               </div>
             </div>
+
+            <!-- CMS -->
 
             <div class="skill-card reveal">
               <h3>CMS & Other</h3>
@@ -1285,8 +1515,8 @@
       </section>
 
       <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
+           PROJECTS
+      ====================================================== -->
 
       <section class="projects" id="projects">
         <div class="container">
@@ -1297,7 +1527,7 @@
 
             <p class="section-description">
               A selection of applications ranging from production business
-              software to web platforms.
+              software to AI-powered tools and web platforms.
             </p>
           </div>
 
@@ -1330,6 +1560,44 @@
                   <span>MySQL</span>
                   <span>•</span>
                   <span>JavaScript</span>
+                  <span>•</span>
+                  <span>AI</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- LARAGPT -->
+
+            <article class="project ai-project reveal">
+              <div class="project-top">
+                <span class="project-number"> 02 — AI APPLICATION </span>
+
+                <a href="#" class="project-link" aria-label="LaraGPT project">
+                  ↗
+                </a>
+              </div>
+
+              <div class="project-content">
+                <span class="project-badge"> AI / LLM </span>
+
+                <h3>LaraGPT</h3>
+
+                <p>
+                  AI-powered Laravel application exploring the integration of
+                  language models with application workflows, structured JSON
+                  data and backend logic.
+                </p>
+
+                <div class="project-tech">
+                  <span>Laravel</span>
+                  <span>•</span>
+                  <span>PHP</span>
+                  <span>•</span>
+                  <span>AI / LLM</span>
+                  <span>•</span>
+                  <span>JSON</span>
+                  <span>•</span>
+                  <span>API</span>
                 </div>
               </div>
             </article>
@@ -1338,7 +1606,7 @@
 
             <article class="project reveal">
               <div class="project-top">
-                <span class="project-number"> 02 — WEB APPLICATION </span>
+                <span class="project-number"> 03 — WEB APPLICATION </span>
 
                 <a
                   href="https://www.symtechmanager.com/"
@@ -1373,7 +1641,7 @@
 
             <article class="project reveal">
               <div class="project-top">
-                <span class="project-number"> 03 — WORDPRESS </span>
+                <span class="project-number"> 04 — WORDPRESS </span>
 
                 <a
                   href="https://equi-tel.com/"
@@ -1408,7 +1676,7 @@
 
             <article class="project reveal">
               <div class="project-top">
-                <span class="project-number"> 04 — E-COMMERCE </span>
+                <span class="project-number"> 05 — E-COMMERCE </span>
 
                 <a
                   href="https://equi-tel.com/boutique/"
@@ -1441,7 +1709,7 @@
 
             <article class="project reveal">
               <div class="project-top">
-                <span class="project-number"> 05 — ACADEMIC PROJECT </span>
+                <span class="project-number"> 06 — ACADEMIC PROJECT </span>
 
                 <a
                   href="https://projet-web2-e3.cpsw-fcsei.com/"
@@ -1474,15 +1742,91 @@
       </section>
 
       <!-- =====================================================
-             ENGINEERING APPROACH
-        ====================================================== -->
+           AI & AUTOMATION
+      ====================================================== -->
+
+      <section class="ai-section">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-label">05 / AI & AUTOMATION</div>
+
+            <h2 class="section-title">Building with AI, not just using it.</h2>
+
+            <p class="section-description">
+              I use AI as both an engineering tool and a technology that can
+              become part of the software itself.
+            </p>
+          </div>
+
+          <div class="ai-grid">
+            <div class="ai-card-large reveal">
+              <h3>AI as part of the engineering workflow.</h3>
+
+              <p>
+                AI is integrated into the way I design, build and improve
+                software. I use modern AI tools to accelerate development,
+                explore solutions, generate and transform structured data,
+                automate repetitive work and improve productivity.
+              </p>
+
+              <p style="margin-top: 18px">
+                Beyond development assistance, I also build applications where
+                AI becomes part of the product itself — connecting models, APIs,
+                backend logic and business workflows.
+              </p>
+            </div>
+
+            <div class="ai-points reveal">
+              <div class="ai-point">
+                <h4>AI Integration</h4>
+
+                <p>
+                  Connecting AI capabilities to existing applications and
+                  backend workflows.
+                </p>
+              </div>
+
+              <div class="ai-point">
+                <h4>Automation</h4>
+
+                <p>
+                  Using AI and software automation to reduce repetitive work and
+                  improve business processes.
+                </p>
+              </div>
+
+              <div class="ai-point">
+                <h4>Structured Data</h4>
+
+                <p>
+                  Working with JSON, APIs and structured outputs to connect AI
+                  systems with application logic.
+                </p>
+              </div>
+
+              <div class="ai-point">
+                <h4>AI-Assisted Development</h4>
+
+                <p>
+                  Using AI tools throughout development while maintaining
+                  engineering judgment, code quality and system ownership.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           ENGINEERING APPROACH
+      ====================================================== -->
 
       <section>
         <div class="container">
           <div class="reveal">
-            <div class="section-label">05 / ENGINEERING</div>
+            <div class="section-label">06 / ENGINEERING</div>
 
-            <h2 class="section-title">How I approach software.</h2>
+            <h2 class="section-title">How I build software.</h2>
 
             <p class="section-description">
               I care about building software that is useful, maintainable and
@@ -1517,6 +1861,17 @@
             <article class="principle reveal">
               <div class="principle-number">03</div>
 
+              <h3>Use AI where it adds value</h3>
+
+              <p>
+                Integrate AI when it can improve automation, information
+                processing, developer productivity or user workflows.
+              </p>
+            </article>
+
+            <article class="principle reveal">
+              <div class="principle-number">04</div>
+
               <h3>Own the result</h3>
 
               <p>
@@ -1529,20 +1884,21 @@
       </section>
 
       <!-- =====================================================
-             CONTACT
-        ====================================================== -->
+           CONTACT
+      ====================================================== -->
 
       <section class="contact" id="contact">
         <div class="container">
           <div class="reveal">
-            <div class="section-label">06 / CONTACT</div>
+            <div class="section-label">07 / CONTACT</div>
 
             <h2 class="section-title">Let's build something useful.</h2>
 
             <p class="section-description">
               I'm interested in software development opportunities, especially
               remote roles where I can continue growing as an engineer and
-              contribute to real production systems.
+              contribute to real production systems involving backend
+              development, automation and AI.
             </p>
 
             <a href="mailto:Elliotbeaucage2004@gmail.com" class="contact-email">
@@ -1599,4 +1955,3 @@
     <script src="public/js/app.js"></script>
   </body>
 </html>
-```
